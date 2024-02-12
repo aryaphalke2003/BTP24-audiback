@@ -1,0 +1,808 @@
+[
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 1,
+        "fields": {
+            "Publish": "2023-03-14T20:41:53.772Z",
+            "Class": "9",
+            "Subject": "Maths",
+            "ChapterName": "9_Number_Systems",
+            "PDF": "numbersysten_qr2W5pm.pdf",
+            "AudioFile": "9_Number_Systems_aMnj4QZ.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 2,
+        "fields": {
+            "Publish": "2023-03-14T20:48:15.604Z",
+            "Class": "9",
+            "Subject": "Maths",
+            "ChapterName": "9_Polynomial",
+            "PDF": "polynomials_9_onGVnGb.pdf",
+            "AudioFile": "9_Polynomials_MI3x5RB.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 4,
+        "fields": {
+            "Publish": "2023-03-14T20:49:28.546Z",
+            "Class": "9",
+            "Subject": "Maths",
+            "ChapterName": "9_Coordinate_Geometry",
+            "PDF": "coordinate_geometry_Vrm1epJ.pdf",
+            "AudioFile": "coordinate_geometry_ghYfTCr.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 7,
+        "fields": {
+            "Publish": "2023-03-14T20:51:19.734Z",
+            "Class": "9",
+            "Subject": "Maths",
+            "ChapterName": "9_Linear_Equations_In_Two_Variables",
+            "PDF": "4_0mZEWh6.pdf",
+            "AudioFile": "4_BbZ8X8S.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 8,
+        "fields": {
+            "Publish": "2023-03-14T20:52:04Z",
+            "Class": "9",
+            "Subject": "Maths",
+            "ChapterName": "9_Triangle",
+            "PDF": "iemh107.pdf",
+            "AudioFile": "9_Triangles.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 9,
+        "fields": {
+            "Publish": "2023-03-14T20:52:48.764Z",
+            "Class": "9",
+            "Subject": "Maths",
+            "ChapterName": "9_Introduction_to_Euclids_Geometry",
+            "PDF": "5_xCul0fy.pdf",
+            "AudioFile": "5_nMCe63q.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 10,
+        "fields": {
+            "Publish": "2023-03-14T20:53:58.899Z",
+            "Class": "9",
+            "Subject": "Maths",
+            "ChapterName": "9_Lines_And_Angles",
+            "PDF": "6_j6k5ybV.pdf",
+            "AudioFile": "6_i1R5SEp.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 11,
+        "fields": {
+            "Publish": "2023-03-14T20:55:24.680Z",
+            "Class": "9",
+            "Subject": "Maths",
+            "ChapterName": "9_Quadrilaterals",
+            "PDF": "8_otEgHqp.pdf",
+            "AudioFile": "8_3Re4i4X.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 12,
+        "fields": {
+            "Publish": "2023-03-14T20:56:14.576Z",
+            "Class": "9",
+            "Subject": "Maths",
+            "ChapterName": "9_Areas_Of_Parallelograms_And_Triangles",
+            "PDF": "9_ol7W5BT.pdf",
+            "AudioFile": "9_JLHFeYQ.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 13,
+        "fields": {
+            "Publish": "2023-03-14T21:02:43.814Z",
+            "Class": "9",
+            "Subject": "Maths",
+            "ChapterName": "9_Herons_Formula",
+            "PDF": "12_oakhQXp.pdf",
+            "AudioFile": "12_B8oc49r.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 14,
+        "fields": {
+            "Publish": "2023-03-14T21:08:42.571Z",
+            "Class": "10",
+            "Subject": "Maths",
+            "ChapterName": "10_Real_Numbers",
+            "PDF": "1_UA8t4RJ.pdf",
+            "AudioFile": "1_IuDGy5h.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 15,
+        "fields": {
+            "Publish": "2023-03-14T21:12:14.494Z",
+            "Class": "10",
+            "Subject": "Maths",
+            "ChapterName": "10_Polynomials",
+            "PDF": "2_IHv8BGy.pdf",
+            "AudioFile": "2_0iY1TmC.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 16,
+        "fields": {
+            "Publish": "2023-03-14T21:14:44.861Z",
+            "Class": "10",
+            "Subject": "Maths",
+            "ChapterName": "10_Pairs_of_Linear_Equations_In_Two_Variables",
+            "PDF": "3_A07g0P3.pdf",
+            "AudioFile": "3_oGxpTnm.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 17,
+        "fields": {
+            "Publish": "2023-03-14T21:16:22.013Z",
+            "Class": "10",
+            "Subject": "Maths",
+            "ChapterName": "10_Quadratic_Equations",
+            "PDF": "4_1_79kr37g.pdf",
+            "AudioFile": "4_1_texYYTv.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 18,
+        "fields": {
+            "Publish": "2023-03-14T21:19:13.638Z",
+            "Class": "10",
+            "Subject": "Maths",
+            "ChapterName": "10_Arithmetic_Progressions",
+            "PDF": "Arihtmetic__Progression.pdf",
+            "AudioFile": "Arithmetic_Progression.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 19,
+        "fields": {
+            "Publish": "2023-03-14T21:23:58.500Z",
+            "Class": "10",
+            "Subject": "Maths",
+            "ChapterName": "10_Introduction_To_Trigonometry",
+            "PDF": "introduction_to_trigonometry.pdf",
+            "AudioFile": "introduction_to_trigo.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 20,
+        "fields": {
+            "Publish": "2023-03-14T21:34:10.333Z",
+            "Class": "10",
+            "Subject": "Chemistry",
+            "ChapterName": "10_Chemical_Reactions_and_Equations",
+            "PDF": "chemical_reaction_and_equation.pdf",
+            "AudioFile": "chemical_reation.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 21,
+        "fields": {
+            "Publish": "2023-03-14T21:36:07.302Z",
+            "Class": "10",
+            "Subject": "Chemistry",
+            "ChapterName": "10_Acids_Bases_and_Salts",
+            "PDF": "acid_base_and_salt.pdf",
+            "AudioFile": "acid_base_and_salt.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 22,
+        "fields": {
+            "Publish": "2023-03-14T21:37:36.939Z",
+            "Class": "10",
+            "Subject": "Biology",
+            "ChapterName": "10_Control_and_Coordination",
+            "PDF": "Control_and_Coordination_EJ7IKQa.pdf",
+            "AudioFile": "control_and_cordination.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 23,
+        "fields": {
+            "Publish": "2023-03-15T03:05:00Z",
+            "Class": "9",
+            "Subject": "Maths",
+            "ChapterName": "9_Statistic",
+            "PDF": "jemh113.pdf",
+            "AudioFile": "audio_wieIQKF.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 24,
+        "fields": {
+            "Publish": "2023-03-14T21:39:32.045Z",
+            "Class": "10",
+            "Subject": "Biology",
+            "ChapterName": "10_Our_Environment",
+            "PDF": "Our_environment_1_Ovru2vT.pdf",
+            "AudioFile": "our_environment.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 25,
+        "fields": {
+            "Publish": "2023-03-14T21:40:20.496Z",
+            "Class": "10",
+            "Subject": "Biology",
+            "ChapterName": "10_Sustainable_Management_of_Natural_Resources",
+            "PDF": "Sustainable.pdf",
+            "AudioFile": "Sustainable.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 26,
+        "fields": {
+            "Publish": "2023-03-14T21:48:13.782Z",
+            "Class": "11",
+            "Subject": "Biology",
+            "ChapterName": "11_Animal_Kingdom",
+            "PDF": "animol_kingdom.pdf",
+            "AudioFile": "animal_kingdom.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 27,
+        "fields": {
+            "Publish": "2023-03-15T03:19:00Z",
+            "Class": "10",
+            "Subject": "Maths",
+            "ChapterName": "10_Constructions",
+            "PDF": "jemh111_1.pdf",
+            "AudioFile": "audio_FwqV4P3.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 28,
+        "fields": {
+            "Publish": "2023-03-14T21:52:14.644Z",
+            "Class": "11",
+            "Subject": "Maths",
+            "ChapterName": "11_Sets",
+            "PDF": "sets_11.pdf",
+            "AudioFile": "sets11.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 29,
+        "fields": {
+            "Publish": "2023-03-14T21:55:02.990Z",
+            "Class": "11",
+            "Subject": "Maths",
+            "ChapterName": "11_Relation_and_Functions",
+            "PDF": "Relation_and_function.pdf",
+            "AudioFile": "audio_hsMu7va.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 30,
+        "fields": {
+            "Publish": "2023-03-14T21:58:39.731Z",
+            "Class": "11",
+            "Subject": "Maths",
+            "ChapterName": "11_Linear_Inequalities",
+            "PDF": "LINEAR_INEQUALITIES.pdf",
+            "AudioFile": "LINEAR_INEQUALITIES.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 31,
+        "fields": {
+            "Publish": "2023-03-14T22:04:35.663Z",
+            "Class": "11",
+            "Subject": "Maths",
+            "ChapterName": "11_Principle_of_Mathematical_Induction",
+            "PDF": "PRINCIPLE_OF_mathematical.pdf",
+            "AudioFile": "PRINCIPLE_OF_mathematical.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 32,
+        "fields": {
+            "Publish": "2023-03-14T22:05:27.270Z",
+            "Class": "11",
+            "Subject": "Maths",
+            "ChapterName": "11_Permutations_and_Combinations",
+            "PDF": "permutation_and_combination.pdf",
+            "AudioFile": "permutation_and_combination.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 33,
+        "fields": {
+            "Publish": "2023-03-14T22:08:10.289Z",
+            "Class": "11",
+            "Subject": "Physics",
+            "ChapterName": "11_Physical_World",
+            "PDF": "physical_world_class_11.pdf",
+            "AudioFile": "physical_world.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 34,
+        "fields": {
+            "Publish": "2023-03-14T22:15:48.249Z",
+            "Class": "12",
+            "Subject": "Biology",
+            "ChapterName": "12_Reproductive_Health",
+            "PDF": "Reproductive_health.pdf",
+            "AudioFile": "reproductive_health.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 35,
+        "fields": {
+            "Publish": "2023-03-15T03:48:00Z",
+            "Class": "9",
+            "Subject": "Maths",
+            "ChapterName": "9_Probability_",
+            "PDF": "iemh115.pdf",
+            "AudioFile": "audio_OhTt73q.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 36,
+        "fields": {
+            "Publish": "2023-03-14T22:20:32.848Z",
+            "Class": "12",
+            "Subject": "Biology",
+            "ChapterName": "12_Strategies_for_Enhancement_in_Food_Production",
+            "PDF": "STRATEGIES_FOR_ENHANCEMENT.pdf",
+            "AudioFile": "STRATEGIES_FOR_ENHANCEMENT.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 38,
+        "fields": {
+            "Publish": "2023-03-14T22:24:17.112Z",
+            "Class": "12",
+            "Subject": "Biology",
+            "ChapterName": "12_Biotechnology_Principles_and_Processes",
+            "PDF": "principal_and_process_biology_class_12.pdf",
+            "AudioFile": "principal_and_process_biology_class_12.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 39,
+        "fields": {
+            "Publish": "2023-03-14T22:31:23.034Z",
+            "Class": "12",
+            "Subject": "Maths",
+            "ChapterName": "12_Relations_and_Functions",
+            "PDF": "Relation_and_function_class_12.pdf",
+            "AudioFile": "relation_and_function_class12.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 40,
+        "fields": {
+            "Publish": "2023-03-14T22:37:08.695Z",
+            "Class": "12",
+            "Subject": "Maths",
+            "ChapterName": "12_Inverse_Trigonometric_Functions",
+            "PDF": "inverse_trigonometry_12.pdf",
+            "AudioFile": "inverse_trigonometry.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 41,
+        "fields": {
+            "Publish": "2023-03-15T04:15:00Z",
+            "Class": "9",
+            "Subject": "Maths",
+            "ChapterName": "9_Surface_Areas_and_Volume",
+            "PDF": "iemh113.pdf",
+            "AudioFile": "audio_bdUmt04.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 42,
+        "fields": {
+            "Publish": "2023-03-14T22:55:08.094Z",
+            "Class": "12",
+            "Subject": "Chemistry",
+            "ChapterName": "12_Solutions",
+            "PDF": "solution_12.pdf",
+            "AudioFile": "solution_12.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 43,
+        "fields": {
+            "Publish": "2023-03-14T22:58:05.787Z",
+            "Class": "12",
+            "Subject": "Chemistry",
+            "ChapterName": "12_ElectroChemistry",
+            "PDF": "electrochemistry_12.pdf",
+            "AudioFile": "electrochemistry_12.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 44,
+        "fields": {
+            "Publish": "2023-03-15T04:15:00Z",
+            "Class": "9",
+            "Subject": "Maths",
+            "ChapterName": "9_Circle",
+            "PDF": "iemh110.pdf",
+            "AudioFile": "audio_ss3Fz6u.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 45,
+        "fields": {
+            "Publish": "2023-03-15T05:06:00Z",
+            "Class": "9",
+            "Subject": "Maths",
+            "ChapterName": "9_Construction",
+            "PDF": "iemh111.pdf",
+            "AudioFile": "audio_2W1hVKz.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 46,
+        "fields": {
+            "Publish": "2023-03-21T20:08:33.666Z",
+            "Class": "9",
+            "Subject": "Physics",
+            "ChapterName": "9_Gravitation_",
+            "PDF": "Gravitation.pdf",
+            "AudioFile": "Gravitation.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 47,
+        "fields": {
+            "Publish": "2023-03-21T20:40:52.782Z",
+            "Class": "9",
+            "Subject": "Chemistry",
+            "ChapterName": "9_Is_Matter_Around_Us_Pure?",
+            "PDF": "is_matter_around_us_pure.pdf",
+            "AudioFile": "is_matter_around_us_pure.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 48,
+        "fields": {
+            "Publish": "2023-03-21T20:44:29.903Z",
+            "Class": "9",
+            "Subject": "Chemistry",
+            "ChapterName": "9_Structure_of_the_Atoms",
+            "PDF": "structore_of_atom.pdf",
+            "AudioFile": "STRUCTURE_OF_ATOM.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 49,
+        "fields": {
+            "Publish": "2023-03-21T20:50:09.668Z",
+            "Class": "9",
+            "Subject": "Chemistry",
+            "ChapterName": "9_Natural_resources",
+            "PDF": "Natural_resources.pdf",
+            "AudioFile": "Natural_resources.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 50,
+        "fields": {
+            "Publish": "2023-03-21T21:08:43.612Z",
+            "Class": "9",
+            "Subject": "Chemistry",
+            "ChapterName": "9_Matter_in_Our_Surroundings",
+            "PDF": "matter_in_our_surroundings.pdf",
+            "AudioFile": "audio_ImEIKED.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 51,
+        "fields": {
+            "Publish": "2023-03-21T21:53:21.976Z",
+            "Class": "9",
+            "Subject": "Physics",
+            "ChapterName": "9_Force_and_Law_of_Motion",
+            "PDF": "forces_and_law_of_motion.pdf",
+            "AudioFile": "Force_and_law_of_motion.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 52,
+        "fields": {
+            "Publish": "2023-03-21T22:31:10.503Z",
+            "Class": "9",
+            "Subject": "Biology",
+            "ChapterName": "9_Diversity_In_Living_Organisms",
+            "PDF": "diversity_in_living_organism.pdf",
+            "AudioFile": "Diversity_in_living_organism.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 53,
+        "fields": {
+            "Publish": "2023-03-21T23:01:01Z",
+            "Class": "10",
+            "Subject": "Maths",
+            "ChapterName": "10_Statistics",
+            "PDF": "jemh114.pdf",
+            "AudioFile": "10_Statistics.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 54,
+        "fields": {
+            "Publish": "2023-03-21T23:28:14Z",
+            "Class": "10",
+            "Subject": "Maths",
+            "ChapterName": "10_Circles",
+            "PDF": "jemh110.pdf",
+            "AudioFile": "10_Circles.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 55,
+        "fields": {
+            "Publish": "2023-03-21T23:30:03Z",
+            "Class": "10",
+            "Subject": "Maths",
+            "ChapterName": "10_Constructions",
+            "PDF": "jemh111_2.pdf",
+            "AudioFile": "10_Constructions.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 56,
+        "fields": {
+            "Publish": "2023-03-21T23:47:11Z",
+            "Class": "10",
+            "Subject": "Maths",
+            "ChapterName": "10_Some_Applications_of_Trigonometry",
+            "PDF": "jemh109.pdf",
+            "AudioFile": "10_Some_Applications_of_Trigonometry.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 57,
+        "fields": {
+            "Publish": "2023-03-22T00:02:39Z",
+            "Class": "10",
+            "Subject": "Maths",
+            "ChapterName": "10_Surface_Areas_and_Volumes",
+            "PDF": "jemh113_1.pdf",
+            "AudioFile": "10_Surface_Areas_and_Volumes.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 58,
+        "fields": {
+            "Publish": "2023-03-22T00:32:43Z",
+            "Class": "10",
+            "Subject": "Maths",
+            "ChapterName": "10_Triangles",
+            "PDF": "jemh106.pdf",
+            "AudioFile": "10_Triangles.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 59,
+        "fields": {
+            "Publish": "2023-04-19T04:22:57.639Z",
+            "Class": "10",
+            "Subject": "Science",
+            "ChapterName": "10_Carbon_and_its_Compounds",
+            "PDF": "Carbon_and_its_compund.pdf",
+            "AudioFile": "Carbon_and_its_compund.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 60,
+        "fields": {
+            "Publish": "2023-04-19T04:24:25.679Z",
+            "Class": "10",
+            "Subject": "Science",
+            "ChapterName": "10_Periodic_Classification_of_Elements",
+            "PDF": "periodic.pdf",
+            "AudioFile": "Periodic_classification.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 61,
+        "fields": {
+            "Publish": "2023-04-19T04:25:18.361Z",
+            "Class": "10",
+            "Subject": "Science",
+            "ChapterName": "10_Life_Processes",
+            "PDF": "Life_Process.pdf",
+            "AudioFile": "Life_Process.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 62,
+        "fields": {
+            "Publish": "2023-04-19T04:26:25.307Z",
+            "Class": "10",
+            "Subject": "Science",
+            "ChapterName": "10_Sources_Of_Energy",
+            "PDF": "Sources_Of_Energy.pdf",
+            "AudioFile": "Sources_of_energy.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 63,
+        "fields": {
+            "Publish": "2023-04-19T04:27:20.905Z",
+            "Class": "10",
+            "Subject": "Science",
+            "ChapterName": "10_Magnetic_Effects_Of_Electric_Current",
+            "PDF": "magnetic_effect_of_current.pdf",
+            "AudioFile": "magnetic_effect_of_current.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 64,
+        "fields": {
+            "Publish": "2023-04-19T04:28:12.571Z",
+            "Class": "10",
+            "Subject": "Science",
+            "ChapterName": "10_Electricity",
+            "PDF": "Electricity.pdf",
+            "AudioFile": "Electricity.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 65,
+        "fields": {
+            "Publish": "2023-04-19T04:29:03.456Z",
+            "Class": "10",
+            "Subject": "Science",
+            "ChapterName": "10_The_Human_Eye_And_The_Colourful_World",
+            "PDF": "Human_eye.pdf",
+            "AudioFile": "audio_2O72JL4.mp3",
+            "audio_stamps": " "
+        }
+    },
+    {
+        "model": "audiofiles.audiofiles",
+        "pk": 66,
+        "fields": {
+            "Publish": "2023-04-19T06:58:15.596Z",
+            "Class": "9",
+            "Subject": "Physics",
+            "ChapterName": "9_Work_and_Energy",
+            "PDF": "work_and_energy_M8YGicc.pdf",
+            "AudioFile": "work_and_energy_3WLNVIj.mp3",
+            "audio_stamps": " "
+        }
+    }
+]

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "audiback-storage",
+  "private_key_id": "31510689e6aded6bfb135bdc20c769c37cc334f3",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCwaRNJggKK38mu\nIZDaKznruTTLvPUdjA+SgkXcSjiaOBZGMiVODcGWXmzXBVEtBJnF92K5crM05ikN\nbQHoyd4FjYoQWOpVqaB312zC7RbfJlkN6us4lhdfpbNrOMSNqHl8SAEy/WYK2162\niVnBpx23ZAerD2GBssVwW5QkQRu0NkB6y2PMKViuDoZhFuNv4nkNXabTUVDOIc9U\nBaWuAPjdBv8QXnnXjpxRbXJt7WJ3g2huc9juRuqe3c3uh+yOlN9rnCLcaR2xablL\nmDBFlyeXk9iXEUwlI0mq72XOerhFrvNaGPYaY6C4sJ/3DXTVHPm1gqnVaNP+7ZRC\nrgdDq72lAgMBAAECggEADSrP9A+j2EZwi50ZGRUFjhD/3iksySzNc2u319kjtRcf\nSn6vBs7DYVGLoYJVwcdzIYdKiM8FOJs+pdrku+xoCaq74GZ9RIbptv2PB6mh/bv4\nr6+WKQjC690MBvfGFqYO6KDd6La96WzgT+hGmSFmeBbGSmqr0NN4Jd/Krz4Q2aLc\nb6VxOIg+qyTrDFVnxx7Vc059YoBypHV8jZ7fD9F/URJrGfjXY2FjYclkJ+t8tUhI\nmcFpI/6PGksIrQMU/UrcbfrRLsNcuWBAwTmt+/Eqmq4xX/+TVWELYdRF8+AlLfMt\nYaFGMeFlN1gKGfyAlNQpRD3oy4C4KwkDdzVK+uQSwQKBgQDsyKGXLBRbKdO6Ksa4\no47x/1UOFEupiJDWiwSpudSqhAcKohZwoErFb9xqpg4kvUsl4QJ+XoBH2Y3F25QV\nkTUPr/BzaYNr0QquqPBJIvQodCDbOo0C1Es810FGceMrTVIFxVC8pvj9opYm6sWD\nXkLZfhVDwd6IeRFNmIFzAx1LdQKBgQC+uiRPq7XsijwdCZQtj9BQZLgWoImhyBSO\nWZAQczXkvjFL7hnpNffl2148EEBFK7/3yGM6olpMsHESw+N+fa/3dn1g+E1/8jfj\nkbqyfWA1Gk0mPdoG3x67FoLakdhoLKkpRPTAlhm5SiCbhGh3FxynmcVevtZImuOg\n/7fCjtzTcQKBgBFWs7Z9LNRsIKvuO/UDTRFdcB4C0HOOo4SCU4oWKIN//YAC1H/U\nzQTeJxbMKBb6oYkZi/Qy+VPJk38ckCBwLKGEcagR3uTDPvQBPO8uFxDrSAilpfPC\nFexTmt0Ms+TU2Z/AjiPyWiNAh5w77tCq01xXxjja9m+p5eF3vGrunHONAoGBALUy\n9UJ32RvD7P6NVii/I+Ls/XQJyxhXlSf0cQkf28jY5M7Fg/prWnwXIH0h112gBf5r\nc9KF4hJP4u04C87lrCMHgHB7Fm4C+hQLJHtk390zgq5dPuEeYvzNkz4CJ745B/F8\nYKcDM6c0hKwbbIAQBho43il4Vu6dsLsJl1SRE70RAoGBALyYPpYoa4QCfGMp6+im\nCGsyMcW6eghTvLJ5b1D/Z3LwQ3HL6APXiS31cXqnSljbobswf6BqQP6LxnEv32aH\nmcsgek3M3H3nh/O2vejRBNJTnav8TSKNbnUezbNeipWu52YmKTQkqayzUhijfj+Q\nNE1h3Eu9+NuGQQhtDrR7sOED\n-----END PRIVATE KEY-----\n",
+  "client_email": "audiback@audiback-storage.iam.gserviceaccount.com",
+  "client_id": "101895803018810340739",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/audiback%40audiback-storage.iam.gserviceaccount.com"
+}
