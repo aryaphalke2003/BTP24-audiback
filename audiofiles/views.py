@@ -85,3 +85,26 @@ class NotApprovedAudioFilesView(ListCreateAPIView):
         print("asdfg")
         queryset = AudioFiles.objects.filter(is_approved=False)
         return queryset
+    
+    
+class AddAudioFilesView(ListCreateAPIView):
+    serializer_class=AudioFilesSerializer
+    
+    def post(self, request, *args, **kwargs):
+        audio_file = request.FILES['audio_file']
+        print(audio_file);
+          # Check if the audio file exists in the request
+        if not audio_file:
+            return Response({'error': 'No audio file provided'}, status=400)
+
+        # Create a new AudioFiles object with the uploaded file
+        audio_file_instance = AudioFiles.objects.create(
+            AudioFile=audio_file,
+            # Add other fields if necessary
+        )
+
+        # Serialize the newly created object
+        serializer = AudioFilesSerializer(audio_file_instance)
+        # You can handle the uploaded file here, for example, save it to a specific directory or process it in any way you need.
+        # You can also create an AudioFiles object and save it to the database.
+        return Response({'status': 'File uploaded successfully'}, status=200)

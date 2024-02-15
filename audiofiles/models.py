@@ -17,7 +17,7 @@ permission2 =  GoogleDriveFilePermission(
 gd_storage = GoogleDriveStorage(permissions=(permission1,permission2 ))
 
 # Define Google Drive Storage
-gd_storage = GoogleDriveStorage()
+# gd_storage = GoogleDriveStorage()
 
 # Create your models here.
 def user_directory_path(instance,filename):
