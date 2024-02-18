@@ -13,6 +13,8 @@ urlpatterns =[
     path('audiofiles/approve/<int:audiofile_id>/', views.ApproveAudioFilesView.as_view(), name='approve-audiofile'),
     path('audiofiles/approved/', views.ApprovedAudioFilesView.as_view(), name='approved-audiofiles'),
     path('audiofiles/notapproved/', views.NotApprovedAudioFilesView.as_view(), name='notapproved-audiofiles'),
+    path('admin/add-data/', views.AdminView.as_view(), name='admin-add-data'),
+    path('admin/fetch-data/', views.AdminView.as_view(), name='admin-fetch-data'),
     
 ]
 

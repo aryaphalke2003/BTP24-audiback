@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from gdstorage.storage import GoogleDriveStorage
 from gdstorage.storage import GoogleDriveStorage, GoogleDrivePermissionType, GoogleDrivePermissionRole, GoogleDriveFilePermission
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 permission1 =  GoogleDriveFilePermission(
    GoogleDrivePermissionRole.WRITER,
@@ -44,3 +45,44 @@ class AudioFiles(models.Model):
         verbose_name_plural="audiofiles"
         # unique_together=(("title", "audio"),)
     
+
+class Subject(models.Model):
+    id = models.AutoField(primary_key=True)
+    subjectname = models.CharField(max_length=100,default='')
+    
+    class Meta:
+        # db_table = "audiofiles"
+        verbose_name_plural="subjects"
+
+    
+class Chapter(models.Model):
+    id = models.AutoField(primary_key=True)
+    chaptername = models.CharField(max_length=100,default='')
+    
+    class Meta:
+        # db_table = "audiofiles"
+        verbose_name_plural="Chapter"
+    
+
+class Grade(models.Model):
+    id = models.AutoField(primary_key=True)
+    grade = models.IntegerField(unique=True)
+    subjects = models.ManyToManyField(Subject,null=True)
+    
+    class Meta:
+        # db_table = "audiofiles"
+        constraints = [
+        models.UniqueConstraint(fields=['grade'], name='unique grade')
+    ]
+        verbose_name_plural="Grades"
+    
+class Chapters(models.Model):
+    id = models.AutoField(primary_key=True)
+    
+    grade = models.ForeignKey(Grade,on_delete=models.CASCADE)
+    subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
+    chapters = models.ManyToManyField(Chapter,null=True)
+    
+    class Meta:
+        # db_table = "audiofiles"
+        verbose_name_plural="Chapters"
