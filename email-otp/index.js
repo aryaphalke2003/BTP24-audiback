@@ -6,12 +6,21 @@ require('dotenv').config();
 const app = express();
 app.use(cors())
 
+// const transporter = nodemailer.createTransport({
+//     host: 'smtp.ethereal.email',
+//     port: 587,
+//     auth: {
+//         user: 'autumn.turcotte58@ethereal.email',
+//         pass: 'dDtdqxsyeAPV7FCXrJ'
+//     }
+// });
+
 const transporter = nodemailer.createTransport({
     service: process.env.SERVICE,
     port : 465,
     auth: {
-        user: 'aryaphalke2003@gmail.com',
-        pass: 'audiguide4vi'
+        user: 'aryaphalke9@outlook.com',
+        pass: process.env.PASS
     }
 });
 
@@ -30,7 +39,7 @@ app.get('/sendmail', (req, res) => {
     const otp = Math.floor(getRandomArbitrary(100000,999999))
 
     const mailOptions = {
-        from: 'aryaphalke2003@gmail.com',
+        from: 'aryaphalke9@outlook.com',
         to: req.query.to,
         subject: 'Audiguide Email Verification',
         text: `Dear User,
