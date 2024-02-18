@@ -21,7 +21,7 @@ class selectedView(ListCreateAPIView):
 
     def get_queryset(self):
         uid = self.kwargs.get(self.lookup_url_kwarg)
-        queryset = AudioFiles.objects.filter(ChapterName=uid)
+        queryset = AudioFiles.objects.filter(ChapterName=uid, is_approved=True)
         return queryset
 
 
