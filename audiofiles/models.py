@@ -28,6 +28,22 @@ def user_directory_path(instance,filename):
 def file_path(instance,filename):
     return 'pdf_chapters/{1}'.format(instance.id,filename)
 
+class Admin(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField(unique=True)
+    phone = models.CharField(max_length=15)
+    password = models.CharField(max_length=128)  # Storing hashed passwords
+    
+    class Meta:
+        # db_table = "audiofiles"
+        verbose_name_plural="admins"
+
+    def __str__(self):
+        return self.name
+    
+    
+ 
+
 class AudioFiles(models.Model):
     id = models.AutoField(primary_key=True)
     # Caption=models.CharField(max_length=100,default='')
@@ -38,6 +54,11 @@ class AudioFiles(models.Model):
     PDF=models.FileField(upload_to=file_path,storage=gd_storage, null=True)
     AudioFile= models.FileField(upload_to=user_directory_path,storage=gd_storage,null=True)
     is_approved = models.BooleanField(default=False)
+    Author=models.CharField(max_length=100,default='')
+    description=models.CharField(max_length=1000, default='')
+    References=models.CharField(max_length=1000,default='')
+    approvedBy=models.ForeignKey(Admin,on_delete=models.CASCADE)
+
     # audio_stamps = models.TextField(default=" ")
 
     class Meta:
@@ -49,7 +70,8 @@ class AudioFiles(models.Model):
 class Subject(models.Model):
     id = models.AutoField(primary_key=True)
     subjectname = models.CharField(max_length=100,default='')
-    
+  
+
     class Meta:
         # db_table = "audiofiles"
         verbose_name_plural="subjects"
@@ -58,6 +80,8 @@ class Subject(models.Model):
 class Chapter(models.Model):
     id = models.AutoField(primary_key=True)
     chaptername = models.CharField(max_length=100,default='')
+    is_pdf_available = models.BooleanField(default=False)
+    is_audiofile_available = models.BooleanField(default=False)
     
     class Meta:
         # db_table = "audiofiles"
@@ -86,3 +110,10 @@ class Chapters(models.Model):
     class Meta:
         # db_table = "audiofiles"
         verbose_name_plural="Chapters"
+        
+        
+
+
+
+
+    
