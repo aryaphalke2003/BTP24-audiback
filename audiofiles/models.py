@@ -57,7 +57,8 @@ class AudioFiles(models.Model):
     Author=models.CharField(max_length=100,default='')
     description=models.CharField(max_length=1000, default='')
     References=models.CharField(max_length=1000,default='')
-    approvedBy=models.ForeignKey(Admin,on_delete=models.CASCADE)
+    approvedBy=models.ForeignKey(Admin,on_delete=models.CASCADE, null=True)
+    is_disapproved=models.BooleanField(default=False)
 
     # audio_stamps = models.TextField(default=" ")
 

@@ -67,6 +67,18 @@ class ApproveAudioFilesView(APIView):
             return Response("Audio file not found or already approved")
         
         try:
+                audiofiles = AudioFiles.objects.filter(
+                Chaptername=audiofile.ChapterName, is_approved=True)
+                
+                audiofiles.update(is_approved=False, is_disapproved=True)
+                print("asdf")
+                
+        except AudioFiles.DoesNotExist:
+            return Response("Audio file not found or already approved")
+        
+        
+        
+        try:
             chapter = Chapter.objects.get(
                 chaptername=audiofile.ChapterName)
         except Chapter.DoesNotExist:
@@ -76,6 +88,9 @@ class ApproveAudioFilesView(APIView):
         chapter.is_pdf_available=True
         chapter.save()
         # Approve the audio file
+        
+        
+        
         audiofile.is_approved = True
         audiofile.save()
         
@@ -83,13 +98,51 @@ class ApproveAudioFilesView(APIView):
         
         serializer = AudioFilesSerializer(audiofile)
         return Response(serializer.data)
+    
+
+class DisApproveAudioFilesView(APIView):
+    # authentication_classes = [JWTAuthentication]
+
+    def post(self, request, audiofile_id):
+        # if not JWTAuthentication.authenticate(self, request):
+        #     return Response("Authentication Failed", status=status.HTTP_401_UNAUTHORIZED)
+        print("here")
+        try:
+            audiofile = AudioFiles.objects.get(
+                id=audiofile_id, is_approved=False)
+        except AudioFiles.DoesNotExist:
+            return Response("Audio file not found or already approved")
+        
+       
+       
+        # Approve the audio file
+        audiofile.is_approved = False
+        
+        audiofile.is_disapproved = True
+        audiofile.save()
+        
+        
+        
+        serializer = AudioFilesSerializer(audiofile)
+        return Response(serializer.data)
+    
+
+
+
 
 
 class ApprovedAudioFilesView(ListCreateAPIView):
     serializer_class = AudioFilesSerializer
 
     def get_queryset(self):
-        queryset = AudioFiles.objects.filter(is_approved=True)
+        queryset = AudioFiles.objects.filter(is_approved=True,is_disapproved=False)
+        return queryset
+    
+class DisApprovedAudioFilesView(ListCreateAPIView):
+    serializer_class = AudioFilesSerializer
+
+    def get_queryset(self):
+        queryset = AudioFiles.objects.filter(is_approved=False, is_disapproved=True)
         return queryset
 
 
@@ -98,7 +151,7 @@ class NotApprovedAudioFilesView(ListCreateAPIView):
 
     def get_queryset(self):
         print("asdfg")
-        queryset = AudioFiles.objects.filter(is_approved=False)
+        queryset = AudioFiles.objects.filter(is_approved=False, is_disapproved=False)
         return queryset
 
 
@@ -132,6 +185,7 @@ class AdminView(ListCreateAPIView):
         data_type = request.data.get('type')
         print("asdfg")
         print(request.data)
+        print(data_type)
 
         if data_type == 'grade':
             return self.add_grade(request)
@@ -139,12 +193,16 @@ class AdminView(ListCreateAPIView):
             return self.add_subject(request)
         elif data_type == 'chapter':
             return self.add_chapter(request)
-        elif data_type == 'fecthgrades':
+        elif data_type == 'fetchgrades':
             return self.get_grades(request)
-        elif data_type == 'fecthsubjects':
+        elif data_type == 'fetchsubjects':
             return self.get_subjects(request)
         elif data_type == 'fetchchapters':
             return self.get_chapters(request)
+        elif data_type == 'fetchgradecount':
+            return self.get_audiofiles_count_grade(request)
+        elif data_type == 'fetchsubjectcount':
+            return self.get_audiofiles_count_subject(request)
         else:
             return Response({'error': 'Invalid data type'}, status=status.HTTP_400_BAD_REQUEST)
 
@@ -224,6 +282,7 @@ class AdminView(ListCreateAPIView):
     def get_grades(self, request):
         grades = Grade.objects.all()
         serializer = GradeSerializer(grades, many=True)
+        print(grades)
         return Response(serializer.data)
 
     def get_subjects(self, request):
@@ -243,19 +302,25 @@ class AdminView(ListCreateAPIView):
         except (Grade.DoesNotExist, Subject.DoesNotExist):
             return Response({'error': 'Grade or Subject not found'}, status=status.HTTP_404_NOT_FOUND)
         
-        chapters = Chapters.objects.filter(grade=grade, subject=subject).first().chapters.all()
-        
-        serializer = ChapterSerializer(chapters, many=True)
-        return Response(serializer.data)
+        chapters = Chapters.objects.get(grade=grade, subject=subject)
+        if chapters:
+            print(chapters.chapters)
+            serializer = ChapterSerializer(chapters.chapters, many=True)
+            return Response(serializer.data)
+        return Response("no chapters available")
     
     def get_audiofiles_count_grade(self,request):
         
         try:
-            grade = Grade.objects.get(id=request.data.get('grade'))
+            # print("dfghjhghjk");
+            
+            grade = Grade.objects.get(grade=request.data.get('grade'))
         
         # Filter the Chapters model to get all chapters associated with the grade
             chapters = Chapters.objects.filter(grade=grade)
             audiofile_chapters = chapters.filter(chapters__is_audiofile_available=True)
+            # print("asdfg");
+            print(audiofile_chapters.count())
             return Response(data=audiofile_chapters.count(),status=status.HTTP_200_OK)
         
         
