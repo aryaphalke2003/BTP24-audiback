@@ -48,6 +48,18 @@ class idView(APIView):
 class AudioFilesView(ListCreateAPIView):
     serializer_class = AudioFilesSerializer
 
+    def post(self, request):
+        classname = request.data.get("grade")
+        subjectname = request.data.get("subject")
+        chaptername = request.data.get("chapter")
+        print(request.data)
+        queryset = AudioFiles.objects.get(
+            Class=classname, Subject=subjectname, ChapterName=chaptername)
+        print(queryset)
+        serializer = AudioFilesSerializer(queryset)
+        print(serializer.data)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
     def get_queryset(self):
         queryset = AudioFiles.objects.all()
         return queryset
@@ -65,40 +77,34 @@ class ApproveAudioFilesView(APIView):
                 id=audiofile_id, is_approved=False)
         except AudioFiles.DoesNotExist:
             return Response("Audio file not found or already approved")
-        
+
         try:
-                audiofiles = AudioFiles.objects.filter(
-                ChapterName=audiofile.ChapterName, is_approved=True)
-                
-                audiofiles.update(is_approved=False, is_disapproved=True)
-                print("asdf")
-                
+            audiofiles = AudioFiles.objects.filter(
+                Chaptername=audiofile.ChapterName, is_approved=True)
+
+            audiofiles.update(is_approved=False, is_disapproved=True)
+            print("asdf")
+
         except AudioFiles.DoesNotExist:
             return Response("Audio file not found or already approved")
-        
-        
-        
+
         try:
             chapter = Chapter.objects.get(
                 chaptername=audiofile.ChapterName)
         except Chapter.DoesNotExist:
-            return Response("Chapter has not been added by admin. Please add the chapter first",status=status.HTTP_400_BAD_REQUEST)
-       
-        chapter.is_audiofile_available=True
-        chapter.is_pdf_available=True
+            return Response("Chapter has not been added by admin. Please add the chapter first", status=status.HTTP_400_BAD_REQUEST)
+
+        chapter.is_audiofile_available = True
+        chapter.is_pdf_available = True
         chapter.save()
         # Approve the audio file
-        
-        
-        
+
         audiofile.is_approved = True
         audiofile.save()
-        
-        
-        
+
         serializer = AudioFilesSerializer(audiofile)
         return Response(serializer.data)
-    
+
 
 class DisApproveAudioFilesView(APIView):
     # authentication_classes = [JWTAuthentication]
@@ -112,37 +118,32 @@ class DisApproveAudioFilesView(APIView):
                 id=audiofile_id, is_approved=False)
         except AudioFiles.DoesNotExist:
             return Response("Audio file not found or already approved")
-        
-       
-       
+
         # Approve the audio file
         audiofile.is_approved = False
-        
+
         audiofile.is_disapproved = True
         audiofile.save()
-        
-        
-        
+
         serializer = AudioFilesSerializer(audiofile)
         return Response(serializer.data)
-    
-
-
-
 
 
 class ApprovedAudioFilesView(ListCreateAPIView):
     serializer_class = AudioFilesSerializer
 
     def get_queryset(self):
-        queryset = AudioFiles.objects.filter(is_approved=True,is_disapproved=False)
+        queryset = AudioFiles.objects.filter(
+            is_approved=True, is_disapproved=False)
         return queryset
-    
+
+
 class DisApprovedAudioFilesView(ListCreateAPIView):
     serializer_class = AudioFilesSerializer
 
     def get_queryset(self):
-        queryset = AudioFiles.objects.filter(is_approved=False, is_disapproved=True)
+        queryset = AudioFiles.objects.filter(
+            is_approved=False, is_disapproved=True)
         return queryset
 
 
@@ -151,7 +152,8 @@ class NotApprovedAudioFilesView(ListCreateAPIView):
 
     def get_queryset(self):
         print("asdfg")
-        queryset = AudioFiles.objects.filter(is_approved=False, is_disapproved=False)
+        queryset = AudioFiles.objects.filter(
+            is_approved=False, is_disapproved=False)
         return queryset
 
 
@@ -173,9 +175,10 @@ class AddAudioFilesView(ListCreateAPIView):
 
         # Serialize the newly created object
         serializer = AudioFilesSerializer(audio_file_instance)
+
         # You can handle the uploaded file here, for example, save it to a specific directory or process it in any way you need.
         # You can also create an AudioFiles object and save it to the database.
-#         return Response({'status': 'File uploaded successfully'}, status=200)
+        return Response({'status': 'File uploaded successfully'}, status=200)
 
 
 class AdminView(ListCreateAPIView):
@@ -245,6 +248,14 @@ class AdminView(ListCreateAPIView):
         subject_id = request.data.get('subject')
         grade = Grade.objects.get(grade=grade_id)
         subject = Subject.objects.get(subjectname=subject_id)
+        x = 0
+        for f in grade.subjects.all():
+            if f.subjectname == subject_id:
+                x = x+1
+
+        if x == 0:
+            return Response({'error': "Subject doesn't exist in this grade"}, status=status.HTTP_400_BAD_REQUEST)
+
         chap = request.data.get('chapter')
         existing_chapter = Chapter.objects.filter(chaptername=chap).first()
         if existing_chapter:
@@ -296,56 +307,71 @@ class AdminView(ListCreateAPIView):
 
         subjects = grade.subjects.all()
         serializer = SubjectSerializer(subjects, many=True)
+        print(serializer.data)
         return Response(serializer.data)
 
     def get_chapters(self, request):
         try:
             grade = Grade.objects.get(grade=request.data.get('grade'))
-            subject = Subject.objects.get(subjectname=request.data.get('subject'))
+            subject = Subject.objects.get(
+                subjectname=request.data.get('subject'))
         except (Grade.DoesNotExist, Subject.DoesNotExist):
             return Response({'error': 'Grade or Subject not found'}, status=status.HTTP_404_NOT_FOUND)
-        
+
         chapters = Chapters.objects.get(grade=grade, subject=subject)
         if chapters:
             print(chapters.chapters)
             serializer = ChapterSerializer(chapters.chapters, many=True)
             return Response(serializer.data)
         return Response("no chapters available")
-    
-    def get_audiofiles_count_grade(self,request):
-        
+
+    def get_audiofiles_count_grade(self, request):
+
         try:
             # print("dfghjhghjk");
-            
+
             grade = Grade.objects.get(grade=request.data.get('grade'))
-        
+
         # Filter the Chapters model to get all chapters associated with the grade
             chapters = Chapters.objects.filter(grade=grade)
-            audiofile_chapters = chapters.filter(chapters__is_audiofile_available=True)
+            count = 0
+
+            for rec1 in chapters.all():
+                for rec2 in rec1.chapters.all():
+                    if rec2.is_audiofile_available:
+                        print(rec1.subject.subjectname)
+                        print(rec2.chaptername)
+                        print(count)
+                        count = count+1
+
+            # audiofile_chapters = chapters.filter(chapters__is_audiofile_available=True)
+            # print(audiofile_chapters)
             # print("asdfg");
-            print(audiofile_chapters.count())
-            return Response(data=audiofile_chapters.count(),status=status.HTTP_200_OK)
-        
-        
+            # print(audiofile_chapters)
+            # print(audiofile_chapters.count())
+            return Response(data=count, status=status.HTTP_200_OK)
+
         except Grade.DoesNotExist:
-        # Handle the case where the grade with the given ID does not exist
+            # Handle the case where the grade with the given ID does not exist
             return Response(status=status.HTTP_400_BAD_REQUEST)
-        
-        
-    def get_audiofiles_count_subject(self,request):
-        
+
+    def get_audiofiles_count_subject(self, request):
+
         try:
-            grade = Grade.objects.get(id=request.data.get('grade'))
-            subject = Subject.objects.get(id=request.data.get('subject'))
-            
-        
+            print("asd")
+            grade = Grade.objects.get(grade=request.data.get('grade'))
+            subject = Subject.objects.get(
+                subjectname=request.data.get('subject'))
+
         # Filter the Chapters model to get all chapters associated with the grade
-            chapters = Chapters.objects.filter(grade=grade,subject=subject)
-            audiofile_chapters = chapters.filter(chapters__is_audiofile_available=True)
-            return Response(data=audiofile_chapters.count(),status=status.HTTP_200_OK)
-        
-        
+            chapters = Chapters.objects.get(
+                grade=grade, subject=subject).chapters.all()
+            count = 0
+            for rec in chapters:
+                if rec.is_audiofile_available:
+                    count = count+1
+            return Response(data=count, status=status.HTTP_200_OK)
+
         except Grade.DoesNotExist:
-        # Handle the case where the grade with the given ID does not exist
+            # Handle the case where the grade with the given ID does not exist
             return Response(status=status.HTTP_400_BAD_REQUEST)
-        
