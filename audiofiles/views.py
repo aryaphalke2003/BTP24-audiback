@@ -68,7 +68,7 @@ class ApproveAudioFilesView(APIView):
         
         try:
                 audiofiles = AudioFiles.objects.filter(
-                Chaptername=audiofile.ChapterName, is_approved=True)
+                ChapterName=audiofile.ChapterName, is_approved=True)
                 
                 audiofiles.update(is_approved=False, is_disapproved=True)
                 print("asdf")
@@ -220,6 +220,7 @@ class AdminView(ListCreateAPIView):
         grade = Grade.objects.get(grade=g)
 
         sub_name = request.data.get('subject')
+        print("in add subject:", sub_name)
 
         existing_subject = Subject.objects.filter(subjectname=sub_name).first()
         if existing_subject:
@@ -228,10 +229,11 @@ class AdminView(ListCreateAPIView):
             if (existing_subject2):
                 return Response({'error': 'Subject with this name already exists'}, status=status.HTTP_400_BAD_REQUEST)
 
+
             grade.subjects.add(existing_subject)
             return Response(status=status.HTTP_200_OK)
 
-        subject_instance = Subject.objects.create(name=sub_name)
+        subject_instance = Subject.objects.create(subjectname=sub_name)
         grade.subjects.add(subject_instance)
 
         serializer = SubjectSerializer(subject_instance)
@@ -283,6 +285,7 @@ class AdminView(ListCreateAPIView):
         grades = Grade.objects.all()
         serializer = GradeSerializer(grades, many=True)
         print(grades)
+        print("fetching grades")
         return Response(serializer.data)
 
     def get_subjects(self, request):
