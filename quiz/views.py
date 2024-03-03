@@ -17,6 +17,7 @@ class QuizView(ListCreateAPIView):
     def get_queryset(self):
         uid = self.kwargs.get(self.lookup_url_kwarg)
         queryset = Quiz.objects.filter(chapterName=uid)
+        # print(queryset.length)
         return queryset
 
 
