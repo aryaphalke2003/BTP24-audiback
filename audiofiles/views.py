@@ -80,7 +80,7 @@ class ApproveAudioFilesView(APIView):
 
         try:
             audiofiles = AudioFiles.objects.filter(
-                Chaptername=audiofile.ChapterName, is_approved=True)
+                ChapterName=audiofile.ChapterName, is_approved=True)
 
             audiofiles.update(is_approved=False, is_disapproved=True)
             print("asdf")
