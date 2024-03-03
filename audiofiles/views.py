@@ -131,11 +131,15 @@ class DisApproveAudioFilesView(APIView):
 
 class ApprovedAudioFilesView(ListCreateAPIView):
     serializer_class = AudioFilesSerializer
-
     def get_queryset(self):
         queryset = AudioFiles.objects.filter(
             is_approved=True, is_disapproved=False)
         return queryset
+    
+        
+
+
+
 
 
 class DisApprovedAudioFilesView(ListCreateAPIView):

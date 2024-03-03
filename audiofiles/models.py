@@ -60,7 +60,12 @@ class AudioFiles(models.Model):
     approvedBy=models.ForeignKey(Admin,on_delete=models.CASCADE, null=True)
     is_disapproved=models.BooleanField(default=False)
 
-    # audio_stamps = models.TextField(default=" ")
+
+    # def admin_name(self):
+    #     return self.approvedBy.name if self.approvedBy else None
+
+    # def __str__(self):
+    #     return f"{self.id} - {self.ChapterName} - Approved by: {self.admin_name()}"
 
     class Meta:
         # db_table = "audiofiles"
@@ -76,8 +81,7 @@ class Subject(models.Model):
     class Meta:
         # db_table = "audiofiles"
         verbose_name_plural="subjects"
-
-    
+            
 class Chapter(models.Model):
     id = models.AutoField(primary_key=True)
     chaptername = models.CharField(max_length=100,default='')
