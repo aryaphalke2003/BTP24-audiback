@@ -73,15 +73,16 @@ class ApproveAudioFilesView(APIView):
         #     return Response("Authentication Failed", status=status.HTTP_401_UNAUTHORIZED)
         print("here")
         try:
-            audiofile = AudioFiles.objects.get(
-                id=audiofile_id, is_approved=False)
+            audiofile = AudioFiles.objects.get(id=audiofile_id)
         except AudioFiles.DoesNotExist:
             return Response("Audio file not found or already approved")
 
         try:
             audiofiles = AudioFiles.objects.filter(
                 ChapterName=audiofile.ChapterName, is_approved=True)
-
+            for i in audiofiles:
+                print (i.id)
+                
             audiofiles.update(is_approved=False, is_disapproved=True)
             print("asdf")
 
@@ -100,6 +101,8 @@ class ApproveAudioFilesView(APIView):
         # Approve the audio file
 
         audiofile.is_approved = True
+        audiofile.is_disapproved=False
+        audiofile.approvedBy = request.user
         audiofile.save()
 
         serializer = AudioFilesSerializer(audiofile)
@@ -115,7 +118,7 @@ class DisApproveAudioFilesView(APIView):
         print("here")
         try:
             audiofile = AudioFiles.objects.get(
-                id=audiofile_id, is_approved=False)
+                id=audiofile_id)
         except AudioFiles.DoesNotExist:
             return Response("Audio file not found or already approved")
 
@@ -168,21 +171,43 @@ class AddAudioFilesView(ListCreateAPIView):
         audio_file = request.FILES['audio_file']
         print(audio_file)
         # Check if the audio file exists in the request
+        print("sdfsdf")
         if not audio_file:
             return Response({'error': 'No audio file provided'}, status=400)
 
-        # Create a new AudioFiles object with the uploaded file
+        pdf_file = request.FILES.get('PDF')
+        
+        if not pdf_file:
+            return Response({'error': 'No PDF file provided'}, status=400)
+
+        # # Convert 'Class
+        # ' to integer
+        # grade = int(request.data.get('Class', 0))
+        print(audio_file)
+        print(pdf_file)
+
+        # Create a new AudioFiles object with the uploaded files and other data
         audio_file_instance = AudioFiles.objects.create(
             AudioFile=audio_file,
-            # Add other fields if necessary
+            PDF=pdf_file,
+            Class=request.data.get('Class',''),
+            Subject=request.data.get('Subject', ''),
+            ChapterName=request.data.get('ChapterName', ''),
+            is_approved=False,  
+            Author=request.data.get('Author', ''),
+            description=request.data.get('description', ''),
+            References=request.data.get('References', ''),
+            approvedBy=None, 
+            is_disapproved=False,
         )
+
 
         # Serialize the newly created object
         serializer = AudioFilesSerializer(audio_file_instance)
 
         # You can handle the uploaded file here, for example, save it to a specific directory or process it in any way you need.
         # You can also create an AudioFiles object and save it to the database.
-        return Response({'status': 'File uploaded successfully'}, status=200)
+        return Response({'status': 'Ok uploaded successfully'}, status=200)
 
 
 class AdminView(ListCreateAPIView):
